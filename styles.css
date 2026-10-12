@@ -229,6 +229,7 @@ section { padding: 88px 0; }
   color: var(--text);
 }
 .fact-num-sep { color: var(--accent); margin: 0 1px; }
+.fact-num-sm { font-size: 15px; line-height: 1.3; letter-spacing: 0.01em; }
 
 .fact-label { font-size: 13px; color: var(--muted); line-height: 1.45; }
 
