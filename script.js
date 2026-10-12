@@ -107,6 +107,85 @@
     { id: "SET-03", name: "Макси сет", category: "sets", concept: "набор", price: 1400, img: "gdragon-set-maxi" }
   ];
 
+  var PALETTE = {
+    "неон": ["#ff2d87", "#2de2ff"],
+    "минимализм": ["#4a4a57", "#16161c"],
+    "пиксель": ["#7cff4a", "#1b6b2f"],
+    "киберпанк": ["#ff2d87", "#7a2dff"],
+    "градиент": ["#ff7a2d", "#ff2d87"],
+    "ретро": ["#ff4ad0", "#2d1b6b"],
+    "аниме": ["#ff8ab5", "#6b4aff"],
+    "природа": ["#4ade80", "#166534"],
+    "уют": ["#f0a868", "#6b3f1b"],
+    "техно": ["#2de2ff", "#1b3a6b"],
+    "космос": ["#8a7aff", "#1a1038"],
+    "эмоции": ["#ffd84a", "#ff6b2d"],
+    "анимация": ["#2de2ff", "#ff2d87"],
+    "набор": ["#ff2d87", "#2d1b4a"]
+  };
+
+  var SHOT_KIND = {
+    buttons: "buttons",
+    channel: "banner",
+    banners: "banner",
+    overlay: "overlay",
+    emotes: "emotes",
+    "emotes-animated": "emotes",
+    animated: "banner",
+    sets: "set"
+  };
+
+  function buildShot(product) {
+    var pal = PALETTE[product.concept] || ["#ff2d87", "#2d1b4a"];
+    var kind = SHOT_KIND[product.category] || "banner";
+
+    var shot = document.createElement("div");
+    shot.className = "shot shot--" + kind;
+    shot.style.setProperty("--c1", pal[0]);
+    shot.style.setProperty("--c2", pal[1]);
+
+    if (kind === "banner") {
+      var label = document.createElement("span");
+      label.className = "shot-word";
+      label.textContent = product.status ? product.status.toUpperCase() : "CHANNEL";
+      shot.appendChild(label);
+      var bar = document.createElement("span");
+      bar.className = "shot-bar";
+      shot.appendChild(bar);
+    } else if (kind === "overlay") {
+      var frame = document.createElement("span");
+      frame.className = "shot-frame";
+      shot.appendChild(frame);
+      var cam = document.createElement("span");
+      cam.className = "shot-cam";
+      shot.appendChild(cam);
+    } else if (kind === "buttons") {
+      var row = document.createElement("span");
+      row.className = "shot-btns";
+      for (var i = 0; i < 6; i++) row.appendChild(document.createElement("i"));
+      shot.appendChild(row);
+    } else if (kind === "emotes") {
+      var dots = document.createElement("span");
+      dots.className = "shot-dots";
+      for (var j = 0; j < 6; j++) dots.appendChild(document.createElement("i"));
+      shot.appendChild(dots);
+    } else {
+      var tiles = document.createElement("span");
+      tiles.className = "shot-tiles";
+      for (var k = 0; k < 4; k++) tiles.appendChild(document.createElement("i"));
+      shot.appendChild(tiles);
+    }
+
+    if (product.category === "emotes-animated" || product.category === "animated") {
+      var gif = document.createElement("span");
+      gif.className = "shot-gif";
+      gif.textContent = "GIF";
+      shot.appendChild(gif);
+    }
+
+    return shot;
+  }
+
   var tabsEl = document.getElementById("catalogTabs");
   var subtabsEl = document.getElementById("catalogSubtabs");
   var gridEl = document.getElementById("catalogGrid");
@@ -193,11 +272,7 @@
         var card = document.createElement("article");
         card.className = "product-card";
 
-        var img = document.createElement("img");
-        img.src = "https://picsum.photos/seed/" + product.img + "/640/480";
-        img.alt = product.name;
-        img.loading = "lazy";
-        card.appendChild(img);
+        card.appendChild(buildShot(product));
 
         var body = document.createElement("div");
         body.className = "product-body";
