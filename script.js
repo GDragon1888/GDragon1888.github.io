@@ -328,6 +328,40 @@
     }
 
     render();
+
+    // ---------- hero: счётчик и список разделов ----------
+
+    var factEl = document.getElementById("factCount");
+    if (factEl) factEl.textContent = PRODUCTS.length;
+
+    var heroCats = document.getElementById("heroCategories");
+    if (heroCats) {
+      CATEGORIES.filter(function (c) { return c.key !== "all"; }).forEach(function (cat) {
+        var count = PRODUCTS.filter(function (p) { return p.category === cat.key; }).length;
+
+        var li = document.createElement("li");
+        var btn = document.createElement("button");
+        btn.type = "button";
+
+        var label = document.createElement("span");
+        label.textContent = cat.label;
+        btn.appendChild(label);
+
+        var num = document.createElement("span");
+        num.className = "hp-count";
+        num.textContent = count;
+        btn.appendChild(num);
+
+        btn.addEventListener("click", function () {
+          var target = tabsEl.querySelector('.tab-btn[data-key="' + cat.key + '"]');
+          if (target) target.click();
+          document.getElementById("catalog").scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+
+        li.appendChild(btn);
+        heroCats.appendChild(li);
+      });
+    }
   }
 
   armReveal();
