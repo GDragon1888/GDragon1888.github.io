@@ -207,18 +207,75 @@ section { padding: 88px 0; }
 .hero-visual {
   position: relative;
   height: 520px;
-}
-
-.hv {
-  position: absolute;
-  border-radius: var(--radius);
+  border-radius: 24px;
   border: 1px solid var(--border);
-  object-fit: cover;
+  background:
+    radial-gradient(60% 60% at 50% 45%, rgba(255, 45, 135, 0.10), transparent 70%),
+    linear-gradient(160deg, var(--surface), var(--bg));
+  overflow: hidden;
 }
 
-.hv-1 { width: 62%; height: 100%; right: 0; top: 0; }
-.hv-2 { width: 46%; height: 48%; left: 0; top: 6%; box-shadow: 0 24px 48px rgba(0,0,0,0.4); }
-.hv-3 { width: 46%; height: 42%; left: 4%; bottom: 0; box-shadow: 0 24px 48px rgba(0,0,0,0.4); }
+.hv-corner {
+  position: absolute;
+  width: 34px;
+  height: 34px;
+  border: 2px solid rgba(255, 45, 135, 0.55);
+}
+.hv-corner-tl { top: 24px; left: 24px; border-right: none; border-bottom: none; }
+.hv-corner-tr { top: 24px; right: 24px; border-left: none; border-bottom: none; }
+.hv-corner-bl { bottom: 24px; left: 24px; border-right: none; border-top: none; }
+.hv-corner-br { bottom: 24px; right: 24px; border-left: none; border-top: none; }
+
+.hv-glow {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 45, 135, 0.45), transparent 72%);
+  filter: blur(4px);
+}
+
+.hv-mark {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 96px;
+  letter-spacing: -0.03em;
+  color: var(--text);
+  opacity: 0.92;
+  text-shadow: 0 0 60px rgba(255, 45, 135, 0.5);
+}
+
+.hv-scan {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  top: 30%;
+  background: linear-gradient(90deg, transparent, rgba(255, 45, 135, 0.5), transparent);
+}
+.hv-scan::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 220px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.12), transparent);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hv-glow { animation: pulseGlow 5s ease-in-out infinite; }
+}
+@keyframes pulseGlow {
+  0%, 100% { transform: scale(1); opacity: 0.9; }
+  50% { transform: scale(1.08); opacity: 1; }
+}
 
 /* ---------- catalog ---------- */
 
