@@ -364,5 +364,18 @@
     }
   }
 
+  // подсветка карточек за курсором
+  if (!reduceMotion && window.matchMedia("(hover: hover)").matches) {
+    document.querySelectorAll(".howto-grid").forEach(function (grid) {
+      grid.addEventListener("pointermove", function (e) {
+        var card = e.target.closest(".howto-card");
+        if (!card) return;
+        var r = card.getBoundingClientRect();
+        card.style.setProperty("--mx", (e.clientX - r.left) + "px");
+        card.style.setProperty("--my", (e.clientY - r.top) + "px");
+      });
+    });
+  }
+
   armReveal();
 })();
