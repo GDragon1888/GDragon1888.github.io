@@ -382,6 +382,127 @@ section { padding: 88px 0; }
 
 .product-card img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
 
+/* ---------- catalog preview shots ---------- */
+
+.shot {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background:
+    radial-gradient(90% 120% at 15% 0%, var(--c1), transparent 62%),
+    linear-gradient(145deg, var(--c2), #0b0b11 85%);
+  border-bottom: 1px solid var(--border);
+}
+
+.shot::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+.shot-word {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 11.5%;
+  letter-spacing: 0.04em;
+  color: #fff;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.55);
+}
+
+.shot-bar {
+  position: absolute;
+  left: 14%;
+  right: 14%;
+  bottom: 22%;
+  height: 3px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, var(--c1), transparent);
+}
+
+.shot-frame {
+  position: absolute;
+  inset: 11% 9%;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 7px;
+  box-shadow: inset 0 0 0 1px var(--c1);
+}
+
+.shot-cam {
+  position: absolute;
+  right: 14%;
+  bottom: 16%;
+  width: 26%;
+  height: 30%;
+  border: 2px solid var(--c1);
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.42);
+}
+
+.shot-btns {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 9%;
+  padding: 16% 14%;
+}
+.shot-btns i {
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid var(--c1);
+}
+
+.shot-dots {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8%;
+  padding: 15% 15%;
+}
+.shot-dots i {
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, var(--c1), rgba(0, 0, 0, 0.5));
+  border: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.shot-tiles {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6%;
+  padding: 12%;
+}
+.shot-tiles i {
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.shot-tiles i:first-child { background: rgba(255, 255, 255, 0.18); border-color: var(--c1); }
+
+.shot-gif {
+  position: absolute;
+  top: 9px;
+  right: 9px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: #0a0a0e;
+  background: #fff;
+  border-radius: 4px;
+  padding: 2px 6px;
+}
+
 .product-body { padding: 16px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
 
 .product-tag {
