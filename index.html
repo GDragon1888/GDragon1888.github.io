@@ -26,8 +26,7 @@
     </button>
 
     <div class="nav-links" id="navLinks">
-      <a href="#work">Портфолио</a>
-      <a href="#services">Услуги</a>
+      <a href="#catalog">Каталог</a>
       <a href="#steps">Как заказать</a>
       <a href="#order" class="nav-cta">Заказать на FunPay</a>
     </div>
@@ -42,7 +41,7 @@
       <p class="hero-sub">Баннеры, оверлеи, панели и эмоуты под твой стиль. Примеры работ ниже, заказ оформляется в чате на FunPay.</p>
       <div class="hero-actions">
         <a href="#order" class="btn btn-primary">Заказать на FunPay</a>
-        <a href="#work" class="btn btn-ghost">Смотреть портфолио</a>
+        <a href="#catalog" class="btn btn-ghost">Смотреть каталог</a>
       </div>
     </div>
 
@@ -62,83 +61,20 @@
     </div>
   </div>
 
-  <section class="work" id="work">
+  <section class="catalog" id="catalog">
     <div class="section-head">
-      <h2>Последние работы</h2>
-      <p>Примеры дизайна для стримеров разных жанров и платформ.</p>
+      <h2>Каталог</h2>
+      <p>Нашёл подходящий дизайн? Напиши его название или ID в чат на FunPay, пришлю готовый файл.</p>
     </div>
 
-    <div class="bento reveal">
-      <figure class="bento-item span-tall">
-        <img src="https://picsum.photos/seed/gdragon-banner-neon-shooter/700/900" alt="Пример баннера канала">
-        <figcaption>Баннер канала</figcaption>
-      </figure>
-      <figure class="bento-item">
-        <img src="https://picsum.photos/seed/gdragon-overlay-cyber-pink/700/520" alt="Пример оверлея для стрима">
-        <figcaption>Оверлей для стрима</figcaption>
-      </figure>
-      <figure class="bento-item">
-        <img src="https://picsum.photos/seed/gdragon-panels-retro-arcade/700/520" alt="Пример информационных панелей">
-        <figcaption>Панели информации</figcaption>
-      </figure>
-      <figure class="bento-item span-wide">
-        <img src="https://picsum.photos/seed/gdragon-offline-synthwave/1100/560" alt="Пример офлайн-заставки">
-        <figcaption>Офлайн-заставка</figcaption>
-      </figure>
-      <figure class="bento-item">
-        <img src="https://picsum.photos/seed/gdragon-emotes-pixel-pack/700/520" alt="Пример набора эмоутов">
-        <figcaption>Эмоуты и бейджи</figcaption>
-      </figure>
-      <figure class="bento-item">
-        <img src="https://picsum.photos/seed/gdragon-avatar-mascot/700/520" alt="Пример аватара-маскота">
-        <figcaption>Аватар / маскот</figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <section class="services" id="services">
-    <div class="section-head">
-      <h2>Услуги и цены</h2>
-      <p>Ориентировочная стоимость, итоговая цена зависит от сложности и правок.</p>
+    <div class="catalog-controls">
+      <input type="search" id="catalogSearch" class="catalog-search" placeholder="Поиск по названию, ID или стилю">
+      <div class="catalog-tabs" id="catalogTabs" role="tablist" aria-label="Разделы каталога"></div>
     </div>
 
-    <div class="services-grid reveal">
-      <article class="service-card span-2">
-        <div class="service-top">
-          <h3>Полный оверлей-пак</h3>
-          <span class="price">от 800 ₽</span>
-        </div>
-        <p>Экран загрузки, оверлей для игры и общения, баннер, панели в едином стиле.</p>
-        <a href="#order" class="btn btn-ghost btn-small">Заказать на FunPay</a>
-      </article>
+    <div class="catalog-grid reveal" id="catalogGrid"></div>
 
-      <article class="service-card">
-        <div class="service-top">
-          <h3>Баннер канала</h3>
-          <span class="price">от 300 ₽</span>
-        </div>
-        <p>Шапка профиля под размеры Twitch или Kick.</p>
-        <a href="#order" class="btn btn-ghost btn-small">Заказать на FunPay</a>
-      </article>
-
-      <article class="service-card">
-        <div class="service-top">
-          <h3>Панели информации</h3>
-          <span class="price">от 250 ₽</span>
-        </div>
-        <p>Набор панелей под описание, донаты, соцсети, правила чата.</p>
-        <a href="#order" class="btn btn-ghost btn-small">Заказать на FunPay</a>
-      </article>
-
-      <article class="service-card">
-        <div class="service-top">
-          <h3>Эмоуты и суб-бейджи</h3>
-          <span class="price">от 200 ₽</span>
-        </div>
-        <p>Набор для подписки, в нескольких размерах под Twitch.</p>
-        <a href="#order" class="btn btn-ghost btn-small">Заказать на FunPay</a>
-      </article>
-    </div>
+    <p class="catalog-empty" id="catalogEmpty" hidden>Ничего не найдено. Попробуй другой запрос или раздел.</p>
   </section>
 
   <section class="steps" id="steps">
@@ -149,7 +85,7 @@
     <div class="steps-track reveal">
       <div class="step">
         <h3>Выбираешь дизайн</h3>
-        <p>Смотришь портфолио или описываешь свою идею.</p>
+        <p>Смотришь каталог или описываешь свою идею.</p>
       </div>
       <div class="step-arrow" aria-hidden="true"></div>
       <div class="step">
