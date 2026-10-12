@@ -313,6 +313,34 @@ section { padding: 88px 0; }
 .about-item h3 { font-size: 17px; margin-bottom: 8px; }
 .about-item p { font-size: 14px; }
 
+/* ---------- how it works ---------- */
+
+.howto-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.howto-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.howto-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.howto-card p { font-size: 14px; line-height: 1.6; }
+
 /* ---------- catalog ---------- */
 
 .catalog-controls {
@@ -672,6 +700,7 @@ section { padding: 88px 0; }
   .about-item:first-child { border-top: none !important; padding-top: 0 !important; }
 
   .catalog-grid { grid-template-columns: 1fr 1fr; }
+  .howto-grid { grid-template-columns: 1fr 1fr; }
 
   .steps-track { grid-template-columns: 1fr; }
   .step-arrow { width: 1px; height: 32px; margin: 0 auto; }
@@ -683,4 +712,5 @@ section { padding: 88px 0; }
   main { padding: 0 20px; }
   .catalog-grid { grid-template-columns: 1fr; }
   .hero-facts { grid-template-columns: 1fr; gap: 16px; }
+  .howto-grid { grid-template-columns: 1fr; }
 }
