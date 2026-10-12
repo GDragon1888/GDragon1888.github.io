@@ -50,6 +50,7 @@
     { key: "banners", label: "Баннеры OFFLINE / ONLINE / PAUSED", statuses: true },
     { key: "overlay", label: "Оверлей" },
     { key: "emotes", label: "Смайлики" },
+    { key: "emotes-animated", label: "Анимированные смайлики" },
     { key: "animated", label: "Анимированные OFFLINE / ONLINE / PAUSED", statuses: true },
     { key: "sets", label: "Наборы" }
   ];
@@ -92,6 +93,10 @@
     { id: "EMO-01", name: "Эмоции, часть 1", category: "emotes", concept: "эмоции", price: 200, img: "gdragon-emotes-pack-1" },
     { id: "EMO-02", name: "Эмоции, часть 2", category: "emotes", concept: "эмоции", price: 200, img: "gdragon-emotes-pack-2" },
     { id: "EMO-03", name: "Пиксель-пак", category: "emotes", concept: "пиксель", price: 220, img: "gdragon-emotes-pixel" },
+
+    { id: "AEMO-01", name: "Анимированные эмоции 1", category: "emotes-animated", concept: "анимация", price: 280, img: "gdragon-emotes-anim-1" },
+    { id: "AEMO-02", name: "Анимированные эмоции 2", category: "emotes-animated", concept: "анимация", price: 280, img: "gdragon-emotes-anim-2" },
+    { id: "AEMO-03", name: "Анимированный пиксель-пак", category: "emotes-animated", concept: "пиксель", price: 300, img: "gdragon-emotes-anim-pixel" },
 
     { id: "ANIM-01", name: "Анимированный OFFLINE", category: "animated", status: "offline", concept: "анимация", price: 450, img: "gdragon-anim-offline" },
     { id: "ANIM-02", name: "Анимированный ONLINE", category: "animated", status: "online", concept: "анимация", price: 450, img: "gdragon-anim-online" },
