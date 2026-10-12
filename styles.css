@@ -575,9 +575,9 @@ section { padding: 88px 0; }
   background: rgba(255, 255, 255, 0.6);
   filter: blur(1px);
 }
-.mk-emotes i:nth-child(1) { background: radial-gradient(circle at 36% 30%, #ffe88a, #c06a00 72%); }
-.mk-emotes i:nth-child(2) { background: radial-gradient(circle at 36% 30%, #8df2ff, #0b5f7a 72%); }
-.mk-emotes i:nth-child(3) { background: radial-gradient(circle at 36% 30%, #ff9ddd, #7a1057 72%); }
+.mk-emotes i:nth-child(1) { background: radial-gradient(circle at 36% 30%, #e6d2ae, #8a6b3c 72%); }
+.mk-emotes i:nth-child(2) { background: radial-gradient(circle at 36% 30%, #cfd8dd, #4a5a66 72%); }
+.mk-emotes i:nth-child(3) { background: radial-gradient(circle at 36% 30%, #e3aec2, #7a3f58 72%); }
 
 .mk-chip {
   position: absolute;
