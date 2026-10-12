@@ -3,15 +3,183 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Дизайны для Twitch</title>
-<style>
-  body { font-family: sans-serif; background: #111; color: #eee; text-align: center; padding: 60px 20px; }
-  h1 { font-size: 28px; }
-  p { color: #aaa; }
-</style>
+<title>GDragon1888 · Дизайн для Twitch</title>
+<meta name="description" content="Баннеры, оверлеи, панели и эмоуты для стримеров Twitch и Kick. Заказ оформляется на FunPay.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Manrope:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Витрина скоро будет готова</h1>
-  <p>Страница в процессе наполнения — фото дизайнов и цены добавляются.</p>
+
+<div class="glow" aria-hidden="true"></div>
+
+<header class="nav-wrap">
+  <nav class="nav">
+    <a href="#top" class="logo">
+      <span class="logo-mark">GD</span>
+      <span class="logo-text">GDragon1888</span>
+    </a>
+
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Открыть меню">
+      <span></span><span></span><span></span>
+    </button>
+
+    <div class="nav-links" id="navLinks">
+      <a href="#work">Портфолио</a>
+      <a href="#services">Услуги</a>
+      <a href="#steps">Как заказать</a>
+      <a href="#order" class="nav-cta">Заказать на FunPay</a>
+    </div>
+  </nav>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Дизайн, из-за которого твой канал замечают</h1>
+      <p class="hero-sub">Баннеры, оверлеи, панели и эмоуты под твой стиль. Примеры работ ниже, заказ оформляется в чате на FunPay.</p>
+      <div class="hero-actions">
+        <a href="#order" class="btn btn-primary">Заказать на FunPay</a>
+        <a href="#work" class="btn btn-ghost">Смотреть портфолио</a>
+      </div>
+    </div>
+
+    <div class="hero-visual" aria-hidden="true">
+      <img class="hv hv-1" src="https://picsum.photos/seed/gdragon-hero-main/900/1100" alt="">
+      <img class="hv hv-2" src="https://picsum.photos/seed/gdragon-hero-side-a/640/480" alt="">
+      <img class="hv hv-3" src="https://picsum.photos/seed/gdragon-hero-side-b/640/480" alt="">
+    </div>
+  </section>
+
+  <div class="chip-strip">
+    <div class="chip-row">
+      <span class="chip">Баннеры</span>
+      <span class="chip">Оверлеи</span>
+      <span class="chip">Панели</span>
+      <span class="chip">Эмоуты</span>
+    </div>
+  </div>
+
+  <section class="work" id="work">
+    <div class="section-head">
+      <h2>Последние работы</h2>
+      <p>Примеры дизайна для стримеров разных жанров и платформ.</p>
+    </div>
+
+    <div class="bento reveal">
+      <figure class="bento-item span-tall">
+        <img src="https://picsum.photos/seed/gdragon-banner-neon-shooter/700/900" alt="Пример баннера канала">
+        <figcaption>Баннер канала</figcaption>
+      </figure>
+      <figure class="bento-item">
+        <img src="https://picsum.photos/seed/gdragon-overlay-cyber-pink/700/520" alt="Пример оверлея для стрима">
+        <figcaption>Оверлей для стрима</figcaption>
+      </figure>
+      <figure class="bento-item">
+        <img src="https://picsum.photos/seed/gdragon-panels-retro-arcade/700/520" alt="Пример информационных панелей">
+        <figcaption>Панели информации</figcaption>
+      </figure>
+      <figure class="bento-item span-wide">
+        <img src="https://picsum.photos/seed/gdragon-offline-synthwave/1100/560" alt="Пример офлайн-заставки">
+        <figcaption>Офлайн-заставка</figcaption>
+      </figure>
+      <figure class="bento-item">
+        <img src="https://picsum.photos/seed/gdragon-emotes-pixel-pack/700/520" alt="Пример набора эмоутов">
+        <figcaption>Эмоуты и бейджи</figcaption>
+      </figure>
+      <figure class="bento-item">
+        <img src="https://picsum.photos/seed/gdragon-avatar-mascot/700/520" alt="Пример аватара-маскота">
+        <figcaption>Аватар / маскот</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <div class="section-head">
+      <h2>Услуги и цены</h2>
+      <p>Ориентировочная стоимость, итоговая цена зависит от сложности и правок.</p>
+    </div>
+
+    <div class="services-grid reveal">
+      <article class="service-card span-2">
+        <div class="service-top">
+          <h3>Полный оверлей-пак</h3>
+          <span class="price">от 800 ₽</span>
+        </div>
+        <p>Экран загрузки, оверлей для игры и общения, баннер, панели в едином стиле.</p>
+        <a href="#order" class="btn btn-ghost btn-small">Заказать на FunPay</a>
+      </article>
+
+      <article class="service-card">
+        <div class="service-top">
+          <h3>Баннер канала</h3>
+          <span class="price">от 300 ₽</span>
+        </div>
+        <p>Шапка профиля под размеры Twitch или Kick.</p>
+        <a href="#order" class="btn btn-ghost btn-small">Заказать на FunPay</a>
+      </article>
+
+      <article class="service-card">
+        <div class="service-top">
+          <h3>Панели информации</h3>
+          <span class="price">от 250 ₽</span>
+        </div>
+        <p>Набор панелей под описание, донаты, соцсети, правила чата.</p>
+        <a href="#order" class="btn btn-ghost btn-small">Заказать на FunPay</a>
+      </article>
+
+      <article class="service-card">
+        <div class="service-top">
+          <h3>Эмоуты и суб-бейджи</h3>
+          <span class="price">от 200 ₽</span>
+        </div>
+        <p>Набор для подписки, в нескольких размерах под Twitch.</p>
+        <a href="#order" class="btn btn-ghost btn-small">Заказать на FunPay</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="steps" id="steps">
+    <div class="section-head">
+      <h2>Как проходит заказ</h2>
+    </div>
+
+    <div class="steps-track reveal">
+      <div class="step">
+        <h3>Выбираешь дизайн</h3>
+        <p>Смотришь портфолио или описываешь свою идею.</p>
+      </div>
+      <div class="step-arrow" aria-hidden="true"></div>
+      <div class="step">
+        <h3>Пишешь в FunPay</h3>
+        <p>Оформляешь заказ в чате, обсуждаем детали и сроки.</p>
+      </div>
+      <div class="step-arrow" aria-hidden="true"></div>
+      <div class="step">
+        <h3>Получаешь файлы</h3>
+        <p>Присылаю готовый дизайн в нужном формате.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="order" id="order">
+    <h2>Готов обсудить дизайн для твоего канала</h2>
+    <p>Заказ, оплата и переписка проходят в чате на FunPay, ник <strong>GDragon1888</strong>.</p>
+    <a href="#top" class="btn btn-primary btn-large">Заказать на FunPay</a>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-row">
+    <span class="logo-mark small">GD</span>
+    <span>GDragon1888 · FunPay</span>
+  </div>
+  <p class="footer-note">Отвечаю в чате на FunPay в течение дня.</p>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
