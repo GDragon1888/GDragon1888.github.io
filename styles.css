@@ -166,7 +166,6 @@ section { padding: 88px 0; }
 .btn-ghost:active { transform: scale(0.98); }
 
 .btn-small { padding: 9px 18px; font-size: 13px; margin-top: 18px; }
-.btn-large { padding: 16px 34px; font-size: 15px; }
 
 /* ---------- hero ---------- */
 
@@ -399,18 +398,6 @@ section { padding: 88px 0; }
   border-bottom: 1px solid var(--accent);
   transform: rotate(-45deg);
 }
-
-/* ---------- order / cta ---------- */
-
-.order {
-  text-align: center;
-  padding: 96px 0;
-  border-top: 1px solid var(--border);
-}
-
-.order h2 { font-size: clamp(26px, 3.4vw, 36px); max-width: 20ch; margin: 0 auto; }
-.order p { margin-top: 16px; font-size: 15px; }
-.order .btn { margin-top: 32px; }
 
 /* ---------- footer ---------- */
 
