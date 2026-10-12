@@ -228,6 +228,13 @@
       btn.type = "button";
       btn.className = "tab-btn";
       btn.textContent = cat.label;
+      var n = cat.key === "all"
+        ? PRODUCTS.length
+        : PRODUCTS.filter(function (p) { return p.category === cat.key; }).length;
+      var cnt = document.createElement("span");
+      cnt.className = "tab-count";
+      cnt.textContent = n;
+      btn.appendChild(cnt);
       btn.setAttribute("role", "tab");
       btn.setAttribute("aria-selected", i === 0 ? "true" : "false");
       btn.dataset.key = cat.key;
