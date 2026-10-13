@@ -72,10 +72,10 @@
     { id: "CH-03", name: "Градиент акцент", category: "channel", concept: "градиент", price: 320, img: "gdragon-channel-gradient" },
 
     { id: "OFF-01", name: "Ночной город", category: "banners", status: "offline", concept: "неон", price: 250, img: "gdragon-offline-night-city" },
-    { id: "OFF-02", name: "Ретро аркада", category: "banners", status: "offline", concept: "ретро", price: 250, img: "gdragon-offline-retro-arcade" },
+    { id: "OFF-02", name: "Ретро аркада", category: "banners", status: "offline", concept: "ретро", price: 250, img: "gdragon-offline-retro-arcade" , sold: true },
     { id: "OFF-03", name: "Спокойный туман", category: "banners", status: "offline", concept: "минимализм", price: 230, img: "gdragon-offline-fog" },
 
-    { id: "ON-01", name: "Киберпанк", category: "banners", status: "online", concept: "киберпанк", price: 300, img: "gdragon-online-cyberpunk" },
+    { id: "ON-01", name: "Киберпанк", category: "banners", status: "online", concept: "киберпанк", price: 300, img: "gdragon-online-cyberpunk" , sold: true },
     { id: "ON-02", name: "Ретровейв", category: "banners", status: "online", concept: "ретро", price: 300, img: "gdragon-online-retrowave" },
     { id: "ON-03", name: "Минимал", category: "banners", status: "online", concept: "минимализм", price: 280, img: "gdragon-online-minimal" },
     { id: "ON-04", name: "Аниме-стиль", category: "banners", status: "online", concept: "аниме", price: 320, img: "gdragon-online-anime" },
@@ -90,7 +90,7 @@
     { id: "OVL-02", name: "Полный сет Пиксель", category: "overlay", concept: "пиксель", price: 600, img: "gdragon-overlay-pixel" },
     { id: "OVL-03", name: "Полный сет Минимал", category: "overlay", concept: "минимализм", price: 580, img: "gdragon-overlay-minimal" },
 
-    { id: "EMO-01", name: "Эмоции, часть 1", category: "emotes", concept: "эмоции", price: 200, img: "gdragon-emotes-pack-1" },
+    { id: "EMO-01", name: "Эмоции, часть 1", category: "emotes", concept: "эмоции", price: 200, img: "gdragon-emotes-pack-1" , sold: true },
     { id: "EMO-02", name: "Эмоции, часть 2", category: "emotes", concept: "эмоции", price: 200, img: "gdragon-emotes-pack-2" },
     { id: "EMO-03", name: "Пиксель-пак", category: "emotes", concept: "пиксель", price: 220, img: "gdragon-emotes-pixel" },
 
@@ -102,7 +102,7 @@
     { id: "ANIM-02", name: "Анимированный ONLINE", category: "animated", status: "online", concept: "анимация", price: 450, img: "gdragon-anim-online" },
     { id: "ANIM-03", name: "Анимированный PAUSED", category: "animated", status: "paused", concept: "анимация", price: 450, img: "gdragon-anim-paused" },
 
-    { id: "SET-01", name: "Старт стример", category: "sets", concept: "набор", price: 900, img: "gdragon-set-start" },
+    { id: "SET-01", name: "Старт стример", category: "sets", concept: "набор", price: 900, img: "gdragon-set-start" , sold: true },
     { id: "SET-02", name: "Профи сет", category: "sets", concept: "набор", price: 1100, img: "gdragon-set-pro" },
     { id: "SET-03", name: "Макси сет", category: "sets", concept: "набор", price: 1400, img: "gdragon-set-maxi" }
   ];
@@ -328,6 +328,13 @@
         });
         foot.appendChild(idBtn);
 
+        var sold = product.sold === true;
+
+        var state = document.createElement("span");
+        state.className = "state" + (sold ? " state-sold" : " state-free");
+        state.textContent = sold ? "уже продавалась" : "свободна";
+        body.insertBefore(state, name.nextSibling);
+
         var prices = document.createElement("div");
         prices.className = "prices";
 
@@ -341,11 +348,11 @@
         prices.appendChild(rowBase);
 
         var rowExcl = document.createElement("span");
-        rowExcl.className = "price-row excl";
+        rowExcl.className = "price-row excl" + (sold ? " off" : "");
         rowExcl.innerHTML = '<span class="pl">в одни руки</span>';
         var pvExcl = document.createElement("span");
         pvExcl.className = "pv";
-        pvExcl.textContent = formatPrice(exclusivePrice(product));
+        pvExcl.textContent = sold ? "недоступно" : formatPrice(exclusivePrice(product));
         rowExcl.appendChild(pvExcl);
         prices.appendChild(rowExcl);
 
