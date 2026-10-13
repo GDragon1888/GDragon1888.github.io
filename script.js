@@ -267,6 +267,13 @@
       return haystack.indexOf(state.query) !== -1;
     }
 
+    // ВРЕМЕННО: цена «в одни руки» считается как ×3 от обычной,
+    // пока владелица не задаст свои цифры (поле exclusive у товара их перебивает)
+    function exclusivePrice(product) {
+      if (typeof product.exclusive === "number") return product.exclusive;
+      return Math.round(product.price * 3 / 10) * 10;
+    }
+
     function formatPrice(price) {
       return price.toLocaleString("ru-RU") + " ₽";
     }
@@ -321,10 +328,28 @@
         });
         foot.appendChild(idBtn);
 
-        var price = document.createElement("span");
-        price.className = "price";
-        price.textContent = formatPrice(product.price);
-        foot.appendChild(price);
+        var prices = document.createElement("div");
+        prices.className = "prices";
+
+        var rowBase = document.createElement("span");
+        rowBase.className = "price-row";
+        rowBase.innerHTML = '<span class="pl">обычная</span>';
+        var pvBase = document.createElement("span");
+        pvBase.className = "pv";
+        pvBase.textContent = formatPrice(product.price);
+        rowBase.appendChild(pvBase);
+        prices.appendChild(rowBase);
+
+        var rowExcl = document.createElement("span");
+        rowExcl.className = "price-row excl";
+        rowExcl.innerHTML = '<span class="pl">в одни руки</span>';
+        var pvExcl = document.createElement("span");
+        pvExcl.className = "pv";
+        pvExcl.textContent = formatPrice(exclusivePrice(product));
+        rowExcl.appendChild(pvExcl);
+        prices.appendChild(rowExcl);
+
+        foot.appendChild(prices);
 
         body.appendChild(foot);
         card.appendChild(body);
