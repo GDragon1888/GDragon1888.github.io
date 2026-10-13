@@ -1151,6 +1151,26 @@ section { padding: 88px 0; }
   white-space: nowrap;
 }
 
+.state {
+  align-self: flex-start;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: 6px;
+  padding: 3px 8px;
+}
+.state-free { color: #8BE04A; background: rgba(139, 224, 74, 0.1); }
+.state-sold { color: var(--muted); background: rgba(255, 255, 255, 0.05); }
+
+.price-row.off .pv {
+  background: none;
+  color: var(--muted);
+  font-weight: 400;
+  font-size: 12px;
+}
+.price-row.off .pl { color: var(--muted); }
+
 .price-row.excl .pl { color: var(--amber); }
 .price-row.excl .pv {
   background: var(--molten);
