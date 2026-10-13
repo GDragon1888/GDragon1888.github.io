@@ -312,10 +312,18 @@ section { padding: 88px 0; }
 
 .hero {
   display: block;
-  max-width: 760px;
-  padding-top: 72px;
-  padding-bottom: 80px;
+  padding-top: 52px;
+  padding-bottom: 56px;
 }
+
+.hero-leads {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 44px;
+  align-items: start;
+  margin-top: 6px;
+}
+.hero-leads .hero-lead-accent { grid-column: 1 / -1; margin-top: 20px; }
 
 .hero-kicker {
   display: inline-flex;
@@ -347,19 +355,18 @@ section { padding: 88px 0; }
 @keyframes pulse { 50% { opacity: 0.3; } }
 
 .hero-text h1 {
-  font-size: clamp(36px, 5.2vw, 64px);
+  font-size: clamp(28px, 3.3vw, 40px);
   font-weight: 900;
-  line-height: 1.12;
-  letter-spacing: -1px;
-  margin-bottom: 22px;
-  text-wrap: balance;
+  line-height: 1.14;
+  letter-spacing: -0.5px;
+  margin-bottom: 18px;
+  max-width: 24ch;
 }
 
 .hero-lead {
-  margin-top: 18px;
-  font-size: 15.5px;
-  line-height: 1.68;
-  max-width: 58ch;
+  margin-top: 14px;
+  font-size: 15px;
+  line-height: 1.62;
 }
 
 .hero-lead-accent {
@@ -370,10 +377,10 @@ section { padding: 88px 0; }
 
 .hero-facts {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(4, 1fr);
   gap: 18px 28px;
-  margin-top: 34px;
-  padding-top: 28px;
+  margin-top: 26px;
+  padding-top: 22px;
   border-top: 1px solid var(--border);
 }
 
@@ -391,7 +398,7 @@ section { padding: 88px 0; }
 
 .fact-label { font-size: 13px; color: var(--muted); line-height: 1.45; }
 
-.hero-actions { display: flex; gap: 14px; margin-top: 34px; flex-wrap: wrap; }
+.hero-actions { display: flex; gap: 14px; margin-top: 26px; flex-wrap: wrap; }
 
 /* ---------- материал: градиентный кант и стекло ---------- */
 
@@ -1223,7 +1230,9 @@ section { padding: 88px 0; }
   .nav-cta { text-align: center; }
   .nav-toggle { display: flex; }
 
-  .hero { grid-template-columns: 1fr; padding-top: 40px; gap: 40px; }
+  .hero { padding-top: 36px; }
+  .hero-leads { grid-template-columns: 1fr; }
+  .hero-facts { grid-template-columns: 1fr 1fr; }
   .hero-panel { position: static; }
   .mockup { position: static; order: -1; max-width: 460px; }
 
@@ -1245,6 +1254,7 @@ section { padding: 88px 0; }
   main { padding: 0 20px; }
   .catalog-grid { grid-template-columns: 1fr; }
   .hero-facts { grid-template-columns: 1fr; gap: 16px; }
+  .hero-leads { grid-template-columns: 1fr; column-gap: 0; }
   .howto-grid { grid-template-columns: 1fr; }
   .howto-wide { grid-column: span 1; }
   .about-grid { grid-template-columns: 1fr; }
